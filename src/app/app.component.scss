@@ -1,0 +1,19 @@
+.navigation {
+    &__list {
+        list-style-type: none;
+        display: inline;
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        text-decoration: none;
+        color: black;
+
+        &:visited {
+            color: black;
+        }
+    }
+}

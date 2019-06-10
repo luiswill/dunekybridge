@@ -1,0 +1,47 @@
+$answerPlaceholderHeight: 100px;
+
+.charactersDragDropSection__available {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.charactersDragDropSection {
+    display: flex;
+
+    &__available {
+
+    }
+
+    &__answers {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: auto;
+    }
+
+    &__plusSign, &__equalSign {
+        display: blocK;
+        height: 100%;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: $answerPlaceholderHeight;
+    }
+
+    &__answerPlaceholder {
+        height: $answerPlaceholderHeight;
+        width: $answerPlaceholderHeight;
+        background-color: lightblue;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+}
+

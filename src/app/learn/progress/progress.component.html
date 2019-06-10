@@ -1,0 +1,35 @@
+<div class="chapters">
+
+  <!-- Card -->
+<mdb-card *ngFor="let chapter of chapters">
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>{{chapter.name}}</h4>
+      </mdb-card-title>
+  
+      <!--Text-->
+      <mdb-card-text>{{chapter.description}}
+      </mdb-card-text>
+        
+      <a class="chapter__learnButton" routerLink="/learn/chapters/{{chapter.name}}" mdbBtn color="primary" mdbWavesEffect>Learn</a>
+    </mdb-card-body>
+    <div class="mdb-color lighten-3 text-center">
+        <ul class="list-unstyled list-inline font-small mt-3">
+          <li class="list-inline-item pr-2 white-text">
+              Difficulty : <ngb-rating [rate]="chapter.difficulty"></ngb-rating>
+              </li>
+        </ul>
+      </div>
+  </mdb-card>
+  <!-- Card -->
+
+</div>

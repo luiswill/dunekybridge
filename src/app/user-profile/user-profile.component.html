@@ -1,0 +1,16 @@
+<div *ngIf="user">
+  <h1>{{ user.displayName }}</h1>
+
+
+
+  <h2>Characters I learned</h2>
+  <ul>
+    <li *ngFor="let character of charactersLearned">
+      {{character.character.chineseCharacter}} => {{character.character.englishWord}} => {{character.attempts}} attempts
+      <!-- <img src={{character.imageUrl}} alt={{character.chineseCharacter}}; class="character__image"/> -->
+    </li>
+  
+  </ul>
+
+  <button (click)="logout()">Logout</button>
+</div>

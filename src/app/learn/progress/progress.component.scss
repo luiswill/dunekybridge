@@ -1,0 +1,22 @@
+@import "../../../variables.scss";
+
+.chapters {
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+        width: 300px;
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+
+    .card-title h4 {
+        text-transform: capitalize;
+    }
+
+    .chapter__learnButton {
+        display: block;
+        float: right;
+        margin-top: 30px;
+    }
+}

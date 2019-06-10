@@ -1,0 +1,62 @@
+<ngb-alert [type]="'success'" [dismissible]="false" [ngClass]="{'isHidden': !foundCorrectAnswer}">
+    <strong>Correct!</strong> You unblocked the chinese character for {{characterResult.chineseCharacter}} ({{characterResult.englishWord}}).
+  </ngb-alert>
+
+<div class="charactersDragDropSection__available"
+          cdkDropList
+          #charactersList="cdkDropList"
+          [cdkDropListData]="charactersTask"
+          [cdkDropListConnectedTo]="[characterLeftAnswer, characterRightAnswer]"
+          (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let character of charactersTask" class="character" cdkDrag>
+            <img class="character__image" src={{character.imageUrl}} alt={{character.chineseCharacter}}>
+        </div>   
+</div>
+
+
+<div class="charactersDragDropSection">    
+    <div class="charactersDragDropSection__answers">
+            <div class="charactersDragDropSection__answerPlaceholder"
+            cdkDropList
+            #characterLeftAnswer="cdkDropList"
+            [cdkDropListData]="charactersLeft"
+            [cdkDropListConnectedTo]="[charactersList, characterRightAnswer]" 
+            (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let character of charactersLeft" class="character" cdkDrag>
+                <img class="character__image" src={{character.imageUrl}} alt={{character.chineseCharacter}}>
+              </div>
+            </div>
+
+
+            <div>
+              <span class="charactersDragDropSection__plusSign">+</span>
+            </div>
+            
+            
+            <div class="charactersDragDropSection__answerPlaceholder" 
+            cdkDropList
+            #characterRightAnswer="cdkDropList"
+            [cdkDropListData]="charactersRight"
+            [cdkDropListConnectedTo]="[charactersList, characterLeftAnswer]" 
+            (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let character of charactersRight" class="character" cdkDrag>
+                  <img class="character__image" src={{character.imageUrl}} alt={{character.chineseCharacter}}>
+              </div>
+            </div>
+
+    </div>
+</div>
+
+<div>
+    <span class="charactersDragDropSection__equalSign">=</span>
+</div>
+
+<div class="charactersDragDropSection__result" [ngClass]="{'isHidden': !foundCorrectAnswer}">
+    <div class="character" cdkDrag>
+        <img class="character__image" src={{characterResult.imageUrl}} alt={{characterResult.chineseCharacter}}>
+      </div>
+</div>
+
+
+
+

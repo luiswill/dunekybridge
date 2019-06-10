@@ -1,0 +1,23 @@
+<h3 class="global__headline">Characters to donkeybridge in this chapter</h3>
+
+
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" class="mr-2" style="width: 20px"></th>
+    <th scope="col"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" class="mr-2" style="width: 20px"></th>
+    <th scope="col"><i class="fas fa-thumbs-up"></i></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+        <a routerLink="/learn/chapters/{{chapter}}/{{task.name}}"  class="tasks__taskLink">{{task.name}}</a>
+    </td>
+    <td><a routerLink="/learn/chapters/{{chapter}}/{{task.name}}"  class="tasks__taskLink">{{task.chineseCharacter}}</a></td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
